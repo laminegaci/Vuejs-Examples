@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+.container form {
+  width: 500px;
+  margin: 20px auto;
+}
+.container form .errors-list .error {
+  padding: 15px;
+  background-color: rgba(244, 67, 54, 0.14);
+  color: #f44336;
+  margin-bottom: 15px;
+}
+.container form .form-group {
+  margin-bottom: 20px;
+}
+.container form label {
+  display: block;
+  margin-bottom: 15px;
+}
+.container form .form-input {
+  padding: 10px 15px;
+  background-color: #efefef;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+.container form textarea {
+  height: 120px;
+  resize: none;
+}
+.container form .send-button {
+  display: block;
+  background-color: #2196f3;
+  color: #fff;
+  border-color: transparent;
+  padding: 10px 20px;
+  width: 100%;
+  font-size: 24px;
+}
+
+.links-urls {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+}
+.links-urls .link {
+  padding: 10px 20px;
+  display: block;
+  background-color: #eee;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #777;
+}

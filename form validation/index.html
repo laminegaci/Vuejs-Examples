@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get github repos</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+
+    <div class="container" id="app">
+
+        <form action="" method="post" @click="validateForm">
+            <div class="errors-list">
+                <div class="error" v-for="error in formErrors"> {{ error }} </div>
+            </div>
+            <div class="form-group">
+                <label for="">Username</label>
+                <input class="form-input" type="text" name="username" v-model="username" />
+            </div>
+            <div class="form-group">
+                <label for="">Subject</label>
+                <input class="form-input" type="text" name="subject" v-model="subject" />
+            </div>
+            <div class="form-group">
+                <label for="">Message</label>
+                <textarea class="form-input" name="message" v-model="message"></textarea>
+            </div>
+            <div class="form-group">
+                <input class="send-button" type="submit" value="Send" />
+            </div>
+        </form>
+
+    </div>
+
+    <script src="../assets/js/vue.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                formErrors: [],
+                username: null,
+                subject: null,
+                message: null,
+                minChar: 5,
+                maxChars: 10
+
+            },
+            methods: {
+                validateForm: function (e) {
+                    this.formErrors = [];
+                    //check if username is empty
+                    if (!this.username) {
+                        this.formErrors.push('username cant be empty')
+                    }
+                    //check username character count
+                    if (this.username && this.username.length < this.minChar) {
+                        this.formErrors.push('username cant be less then ' + this.minChar + ' character')
+                    }
+                    //check if subject is empty
+                    if (!this.subject) {
+                        this.formErrors.push('subject cant be empty')
+                    }
+                    //check if message is empty
+                    if (!this.message) {
+                        this.formErrors.push('message cant be empty')
+                    }
+
+                    //if no errors return true
+                    if (!this.formErrors.length) {
+                        return true
+                    }
+                    e.preventDefault();
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
