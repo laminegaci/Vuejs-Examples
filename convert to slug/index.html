@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convert to slug</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="container" id="app">
+        <div class="input-container">
+            <input v-model="input" type="text" placeholder="Post Title" />
+            <button @click="convert">Convert To Slug</button>
+        </div>
+        <div class="slug-result">http://lamine.org/<span>{{output}}</span> </div>
+    </div>
+
+    <script src="../assets/js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                input: "",
+                output: ""
+            },
+            methods: {
+                convert: function () {
+                    //cache the variable
+                    var slug = this.input;
+                    //convert to lowercase
+                    slug = slug.toLowerCase();
+                    //repalce whitespace with dashes
+                    slug = slug.replace(/\s+/g, "-");
+                    //return the result to output
+                    this.output = slug
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

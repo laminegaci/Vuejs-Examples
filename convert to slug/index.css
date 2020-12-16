@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+.container .input-container {
+  margin: 20px auto;
+}
+.container .input-container input {
+  padding: 15px;
+  border: 1px solid #ccc;
+  height: 40px;
+}
+.container .input-container button {
+  height: 40px;
+  cursor: pointer;
+}
+.container .slug-result {
+  background-color: #eee;
+  padding: 15px;
+  width: 500px;
+  text-align: left;
+}
+
+.links-urls {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+}
+.links-urls .link {
+  padding: 10px 20px;
+  display: block;
+  background-color: #eee;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #777;
+}
