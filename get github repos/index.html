@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get github repos</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Code Start -->
+    <div class="container" id="app">
+        <input type="text" v-model="username" />
+        <button @click="getRepos">Get Repos</button>
+
+        <div v-for="repo in repos">
+            <h4> {{ repo.name }} </h4>
+            <h6> {{ repo.private }} </h6>
+        </div>
+
+    </div>
+
+    <script src="../assets/js/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                username: null,
+                repos: null
+            },
+            methods: {
+                getRepos: function () {
+                    // [1] get data from api
+                    // [2] return the Response
+                    // [3] catch error
+                    return axios.get(
+                        'https://api.github.com/users/' + this.username + '/repos'
+                    ).then(response => {
+                        this.repos = response.data;
+                    }).catch(error => {
+                        console.log(error);
+                    })
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
