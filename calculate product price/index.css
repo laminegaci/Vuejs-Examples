@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+.product {
+  width: 300px;
+  background-color: #eee;
+  padding: 20px;
+  margin: 20px;
+}
+.product h3 {
+  margin: 0 0 10px;
+  font-weight: bold;
+}
+.product p {
+  font-size: 16px;
+  color: #777;
+}
+.product .price {
+  display: block;
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+.product .amount-title {
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+}
+.product input[type="range"] {
+  width: 100%;
+}
+.product .total-price {
+  overflow: hidden;
+  padding-top: 20px;
+}
+.product .total-price .amount,
+.product .total-price .total {
+  background-color: #fff;
+  padding: 2px 10px;
+  border-radius: 4px;
+}
+.product .total-price .amount {
+  float: left;
+}
+.product .total-price .total {
+  float: right;
+}
+
+.links-urls {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+}
+.links-urls .link {
+  padding: 10px 20px;
+  display: block;
+  background-color: #eee;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #777;
+}
