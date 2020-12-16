@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide password</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="container" id="app">
+        <form>
+            <input :type="fieldType" placeholder="Type Your Password" />
+            <button @click.prevent="switchField">{{ buttonType }} Password</button>
+        </form>
+    </div>
+
+    <script src="../assets/js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                fieldType: 'password',
+                buttonType: 'Show'
+            },
+            methods: {
+                switchField: function () {
+                    this.fieldType = this.fieldType === 'password' ? 'text' : 'password'
+                    this.buttonType = this.fieldType === 'password' ? 'Show' : 'Hide'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
